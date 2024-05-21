@@ -268,9 +268,18 @@
   background-color: transparent;
   transition: all 200ms;
 
+  span {
+    margin-left: 3px;
+    transition: margin-left 0.2s;
+  }
+
   &:hover {
     color: var(--color-grey-dark-1);
     cursor: pointer;
+
+    span {
+      margin-left: 8px;
+    }
   }
 }
 
@@ -311,6 +320,7 @@
 
   &__item {
     flex: 50%;
+    justify-content: center;
     text-align: center;
     align-content: space-between;
     margin-bottom: 0.7rem;
@@ -358,6 +368,139 @@
     border: 3px solid white;
     &:not(:first-of-type) {
       margin-left: -1.5rem;
+    }
+  }
+}
+
+///////////////////////////////
+/// REVIEW
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '\201C';
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    font-size: 20rem;
+    color: var(--color-grey-light-2);
+    line-height: 1;
+    font-family: sans-serif;
+    z-index: 1;
+  }
+
+  &__text {
+    z-index: 99;
+    position: relative;
+  }
+
+  &__user {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    align-items: center;
+    &-photo {
+      height: 4.5rem;
+      width: 4.5rem;
+      border-radius: 50%;
+    }
+
+    &-name {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 0.4rem;
+    }
+
+    &-date {
+      font-size: 1.2rem;
+    }
+  }
+  &__rating {
+    margin-left: auto;
+    font-size: 2.5rem;
+    color: var(--color-primary);
+  }
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
+}
+///////////////////////////////
+/// CTA(CALL TO ACTION)
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+  background-color: #fff;
+
+  &__book-now {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: var(--color-grey-dark-2);
+  }
+
+  .btn {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    padding: 3rem 7.5rem;
+    width: 30%;
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    overflow-y: hidden;
+
+    animation: pulsate 1s infinite;
+
+    &__visible {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 350ms;
+    }
+
+    &__invisible {
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -300%);
+      transition: all 350ms;
+    }
+
+    &:hover {
+      cursor: pointer;
+      animation: none;
+      background-image: linear-gradient(
+        to left,
+        var(--color-primary-light),
+        var(--color-primary-dark)
+      );
+
+      .btn__visible {
+        transform: translate(-50%, 300%);
+      }
+
+      .btn__invisible {
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }
