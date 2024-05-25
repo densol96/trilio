@@ -18,6 +18,12 @@
   --line: 2px solid var(--color-grey-light-3);
 }
 
+// SCREEN-BREAKPOINTS
+$screen-width-largest: 1200px;
+$screen-width-mid: 950px;
+$screen-width-small: 750px;
+$screen-width-smallest: 550px;
+
 * {
   margin: 0;
   padding: 0;
@@ -31,6 +37,10 @@
 
 html {
   font-size: 62.5%; // 1 rem = 10px
+
+  @media (max-width: $screen-width-mid) {
+    font-size: 60%;
+  }
 }
 
 body {

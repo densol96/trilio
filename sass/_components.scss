@@ -13,6 +13,13 @@
   justify-content: center;
   align-items: center;
 
+  @media (max-width: $screen-width-smallest) {
+    order: 1;
+    flex: 0 0 70%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -72,6 +79,10 @@
   align-self: stretch;
   display: flex;
 
+  @media (max-width: $screen-width-smallest) {
+    padding: 1rem 0;
+  }
+
   & > * {
     padding: 0 2rem;
     display: flex;
@@ -125,9 +136,27 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  @media (max-width: $screen-width-mid) {
+    margin-top: 0;
+    display: flex;
+  }
+
   &__item {
     margin-bottom: 1.5rem;
     position: relative;
+
+    @media (max-width: $screen-width-mid) {
+      margin-bottom: 0;
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    @media (max-width: $screen-width-smallest) {
+      display: none;
+    }
   }
 
   &__item::before {
@@ -170,6 +199,10 @@
     fill: currentColor;
     margin-right: 2rem;
     z-index: 999;
+
+    @media (max-width: $screen-width-smallest) {
+      margin-right: 0rem;
+    }
   }
 }
 
@@ -178,6 +211,10 @@
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-light-4);
+
+  @media (max-width: $screen-width-mid) {
+    display: none;
+  }
 }
 
 ///////////////////////////////
@@ -207,6 +244,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media (max-width: $screen-width-smallest) {
+      font-size: 1.7rem;
+      padding: 1rem 2rem;
+    }
   }
 
   &__stars {
@@ -230,6 +272,11 @@
     width: 1.75rem;
     height: 1.75rem;
     fill: var(--color-primary);
+
+    @media (max-width: $screen-width-smallest) {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 
   &__icon-location {
@@ -247,9 +294,16 @@
     align-items: center;
     justify-content: center;
 
+    @media (max-width: $screen-width-smallest) {
+      margin-left: 1.25rem;
+    }
+
     &-average {
       font-size: 2.25rem;
       font-weight: 300;
+      @media (max-width: $screen-width-smallest) {
+        font-size: 1.75rem;
+      }
     }
 
     &-count {
